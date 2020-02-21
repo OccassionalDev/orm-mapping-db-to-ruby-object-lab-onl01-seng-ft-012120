@@ -67,10 +67,8 @@ class Student
   end
   
   def self.all_students_in_grade_9
-    self.all.collect do |student|
-      if student.grade = 9
-        student 
-      end 
-    end 
+    sql = <<-SQL 
+      SELECT * FROM students where grade = ?
+    SQL
   end 
 end
