@@ -85,4 +85,13 @@ class Student
       self.new_from_db(row)
     end 
   end 
+  
+  def self.first_x_students_in_grade_10
+    sql = <<-SQL 
+      SELECT * FROM students WHERE grade = 10 LIMIT ?
+    SQL 
+    
+    DB[:conn].execute
+    
+  end 
 end
