@@ -19,7 +19,6 @@ class Student
     
     sql = <<-SQL 
       SELECT * FROM students 
-      WHERE name = ?
     SQL
     
     DB[:conn].execute(sql, name).collect do |row|
