@@ -68,7 +68,9 @@ class Student
   
   def self.all_students_in_grade_9
     self.all.collect do |student|
-      student.grade = 9
+      if student.grade = 9
+        student 
+      end 
     end 
   end 
 end
