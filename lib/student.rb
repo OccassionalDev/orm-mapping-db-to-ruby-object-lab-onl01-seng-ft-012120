@@ -71,7 +71,7 @@ class Student
       SELECT COUNT(*) FROM students WHERE grade = 9 
     SQL
     
-    DB[:conn].collect do |row|
+    DB[:conn].execute(sql).collect do |row|
       self.new_from_db(row)
     end 
   end 
